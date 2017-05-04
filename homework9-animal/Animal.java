@@ -17,22 +17,19 @@ public abstract class Animal {
 
 class Dog extends Animal {
   public String cry(){
-    System.out.print("Cry: Bark!");
     return "Bark!";
   }
 }
 
 class Cat extends Animal {
   public String cry(){
-    System.out.print("Cry: Meow!");
     return "Meow!";
   }
 }
 
 
 class AnimalShelter extends Animal {
-
-  //Cheats
+  //This is a hack since Animal class is abstract and needs this defined
   public String cry(){
     return "";
   }
@@ -53,13 +50,14 @@ class AnimalShelter extends Animal {
       animalList.add(gatto);
     }
   }
-
+  // adopt either animal
   public void adopt(){
     if(animalList.size() == 0){
       System.out.println("Error: No Animals in List.");
     }
     animalList.remove(0);
   }
+  // adopt cat
   public void adoptCat(){
     for(int i = 0; i < animalList.size(); i++){
       if(animalList.get(i).getName() == "Cat"){
@@ -84,7 +82,8 @@ class AnimalShelter extends Animal {
     }
     else{
       for(int i = 0; i < animalList.size(); i++){
-        System.out.println(animalList.get(i).getName() + " " + "Order: " + i);
+        System.out.println(animalList.get(i).getName() + " | "
+        + "Order: " + i + " | " + animalList.get(i).cry());
       }
     }
   }
@@ -97,7 +96,8 @@ class AnimalShelter extends Animal {
     else{
       for(int i = 0; i < animalList.size(); i++){ // goes through list
         if(animalList.get(i).getName() == "Cat"){
-          System.out.println(animalList.get(i).getName()); // prints cats
+          System.out.println(animalList.get(i).getName() + " | "
+          + "Order: " + i + " | " + animalList.get(i).cry()); // prints cats
         }
       }
     }
@@ -110,7 +110,8 @@ class AnimalShelter extends Animal {
     else{
       for(int i = 0; i < animalList.size(); i++){ // goes through list
         if(animalList.get(i).getName() == "Dog"){
-          System.out.println(animalList.get(i).getName()); // prints cats
+          System.out.println(animalList.get(i).getName() + " | "
+          + "Order: " + i + " | " + animalList.get(i).cry()); // prints dogs
         }
       }
     }
