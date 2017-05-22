@@ -11,6 +11,6 @@ class AreaCalculator extends Shape{
 
   }
   public double area(){
-    return 0.0;
+    return 1;
   }
 }
